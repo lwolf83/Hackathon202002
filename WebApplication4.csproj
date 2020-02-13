@@ -73,7 +73,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\products-[1].jpg" />
+    <Content Include="Content\products-[2].jpg" />
+    <Content Include="Content\products-[3].jpg" />
+    <Content Include="Content\products-[4].jpg" />
+    <Content Include="Content\products-[5].jpg" />
+    <Content Include="Content\products-[6].jpg" />
+    <Content Include="Content\products-[7].jpg" />
+    <Content Include="Content\products-[8].jpg" />
     <Content Include="Content\carousel1-min.jpg" />
+    <Content Include="Content\Product-[1].jpg" />
     <Content Include="Content\style.css" />
     <Content Include="TablesCreation.sql" />
     <Content Include="Web.config" />
@@ -94,8 +103,11 @@
     <None Include="packages.config" />
     <Content Include="views\Home\home.sshtml" />
     <Content Include="views\Home\products.sshtml" />
+    <Content Include="views\Home\index.sshtml" />
+    <Content Include="views\Home\DetailProduct.sshtml" />
     <Content Include="views\Home\categories.sshtml" />
     <Content Include="views\Home\ProductsByCategory.sshtml" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -74,13 +74,13 @@ namespace EcoConception
         }
 
         public void RemoveProductById(int productId)
-        {/*
-            String sql = "DELETE FROM product WHERE id=@ProductId";
-            IEnumerable<SqlParameter> parameters = new List<SqlParameter>
-            {
-                new SqlParameter("@ProductId", productId)
-            };
-            Query(sql, parameters);*/
+        {
+            String sql = "DELETE FROM product WHERE id =" + productId;
+            SqlCommand cmd = new SqlCommand();
+
+            // Combinez l'objet Command avec Connection.
+            cmd.Connection = Connection;
+            cmd.CommandText = sql;
         }
         
         public List<Product> GetProductsByCategory(int idCategory)
@@ -107,42 +107,84 @@ namespace EcoConception
             return products;
         }
         /*
+
         public Product GetProductById(int id)
         {
-            String sql = "SELECT [id], [Description], [Name], [Price], [CategoryId] FROM Product WHERE id = @Id";
-            IEnumerable<SqlParameter> parameters = new List<SqlParameter>
+            String sql = "SELECT [id], [Description], [Name], [Price], [CategoryId] FROM Product WHERE id = " + id;
+            SqlCommand cmd = new SqlCommand();
+
+            // Combinez l'objet Command avec Connection.
+            cmd.Connection = Connection;
+            cmd.CommandText = sql;
+            Product newProduct = new Product();
+            using (DbDataReader reader = cmd.ExecuteReader())
             {
-                new SqlParameter("@Id", id)
-            };
-            return concernedProduct;
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    newProduct.Id = reader.GetInt32(reader.GetOrdinal("id"));
+                    newProduct.Price = reader.GetDecimal(reader.GetOrdinal("Price"));
+                    newProduct.CategoryId = reader.GetInt32(reader.GetOrdinal("CategoryId"));
+                    newProduct.Description = reader.GetString(reader.GetOrdinal("Description"));
+                    newProduct.Name = reader.GetString(reader.GetOrdinal("Name"));
+                }
+            }
+            return newProduct;
         }
 
-        public Product GetProductByName(String name)
+       public Product GetProductByName(String name)
         {
-            String sql = "SELECT [id], [Description], [Name], [Price], [CategoryId] FROM Product WHERE Name = @Name";
-            IEnumerable<SqlParameter> parameters = new List<SqlParameter>
+            String sql = "SELECT [id], [Description], [Name], [Price], [CategoryId] FROM Product WHERE Name = " + name;
+            SqlCommand cmd = new SqlCommand();
+
+            // Combinez l'objet Command avec Connection.
+            cmd.Connection = Connection;
+            cmd.CommandText = sql;
+            Product newProduct = new Product();
+            using (DbDataReader reader = cmd.ExecuteReader())
             {
-                new SqlParameter("@Name", name)
-            };
-            return concernedProduct;
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    newProduct.Id = reader.GetInt32(reader.GetOrdinal("id"));
+                    newProduct.Price = reader.GetDecimal(reader.GetOrdinal("Price"));
+                    newProduct.CategoryId = reader.GetInt32(reader.GetOrdinal("CategoryId"));
+                    newProduct.Description = reader.GetString(reader.GetOrdinal("Description"));
+                    newProduct.Name = reader.GetString(reader.GetOrdinal("Name"));
+                }
+            }
+            return newProduct;
         }
         
-        public IEnumerable<Product> GetAllProducts()
+       /* public IEnumerable<Product> GetAllProducts()
         {
             String sql = "SELECT [id], [description], [name], [price], [categoryId] FROM product";
             // IEnumerable<object> allProducts = 
             return allProducts.Cast<Product>();
         }*/
 
-        public void AddCategory(Category category)
+        public void AddCategory(string name, string description)
+
         {
-            throw new NotImplementedException("Not yet implemented. You should implement it.");
+            String sql = "INSERT INTO [Category] (Name, Description) VALUES ('" + name + "', '" + description + "')";
+            SqlCommand cmd = new SqlCommand();
+
+            // Combinez l'objet Command avec Connection.
+            cmd.Connection = Connection;
+            cmd.CommandText = sql;          
         }
 
-        public void UpdateCategory(Category category)
+        public void UpdateCategory(string name, string description)
         {
-            throw new NotImplementedException("Not yet implemented. You should implement it.");
+            String sql = "UPDATE [Category] SET [Name] = '" + name + "', [Description] = '" + description + "' WHERE Id = " + 1;
+            SqlCommand cmd = new SqlCommand();
+
+            // Combinez l'objet Command avec Connection.
+            cmd.Connection = Connection;
+            cmd.CommandText = sql;
         }
+    
+
 
         public List<Category> GetAllCategories()
         {
@@ -169,8 +211,14 @@ namespace EcoConception
 
         public void RemoveCategoryById(int categoryId)
         {
-            throw new NotImplementedException("Not yet implemented. You should implement it.");
+            String sql = "DELETE FROM [Category] WHERE Id = " + categoryId;
+            SqlCommand cmd = new SqlCommand();
+
+            // Combinez l'objet Command avec Connection.
+            cmd.Connection = Connection;
+            cmd.CommandText = sql;
         }
+    
 
 
        public Category GetCategoryById(int id)
@@ -220,6 +268,56 @@ namespace EcoConception
                 }
             }
             return newCategory;
+        }
+
+        public List<Product> GetAllProducts()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Connection;
+            cmd.CommandText = $"SELECT Id, Price, Name, Description, CategoryId FROM Product";
+            List<Product> products = new List<Product>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Product product = new Product();
+                        product.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                        product.Price = reader.GetInt32(reader.GetOrdinal("Price"));
+                        product.Name = reader.GetString(reader.GetOrdinal("Name"));
+                        product.Description = reader.GetString(reader.GetOrdinal("Description"));
+                        product.Category = reader.GetInt32(reader.GetOrdinal("CategoryId"));
+                        products.Add(product);
+                    }
+                }
+            }
+            return products;
+        }
+
+        public List<Product> GetThreeRandomProducts()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Connection;
+            cmd.CommandText = $"SELECT TOP (3) Id, Price, Name, Description, CategoryId FROM Product ORDER BY NEWID()";
+            List<Product> products = new List<Product>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Product product = new Product();
+                        product.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                        product.Price = reader.GetDecimal(reader.GetOrdinal("Price"));
+                        product.Name = reader.GetString(reader.GetOrdinal("Name"));
+                        product.Description = reader.GetString(reader.GetOrdinal("Description"));
+                        product.Category = reader.GetInt32(reader.GetOrdinal("CategoryId"));
+                        products.Add(product);
+                    }
+                }
+            }
+            return products;
         }
     }
 }

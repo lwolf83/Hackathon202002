@@ -7,11 +7,12 @@ namespace EcoConception
     public class Product
     {
         public int Id { get; set; }
-        public Decimal Price { get; set; }
-        public String Name { get; set; }
-        public String Description { get; set; }
-        public Category Category { get; set; }
 
-        public bool PriceIsBig { get => true; }
+        public decimal Price { get; set; }
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public int CategoryId { get; set; }
+
+
     }
 }

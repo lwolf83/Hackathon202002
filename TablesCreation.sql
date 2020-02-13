@@ -33,24 +33,18 @@ CategoryId INT NOT NULL,
 FOREIGN KEY (CategoryId) REFERENCES Category(Id)
 );
 GO
-INSERT INTO Category ([Name], [Description]) VALUES ('Peluche tigre', 'des peluches tigres trop cool');
-INSERT INTO Category ([Name], [Description]) VALUES ('Peluche chien', 'des peluches chien trop cool');
-INSERT INTO Category ([Name], [Description]) VALUES ('Peluche dragon', 'des peluches dragon trop cool');
-INSERT INTO Category ([Name], [Description]) VALUES ('Peluche bébé', 'des peluches bébé trop cool');
+INSERT INTO Category ([Name], [Description]) VALUES ('Stuffed toys', 'Gothic stuffed toys super ghotic');
+INSERT INTO Category ([Name], [Description]) VALUES ('Bags', 'Gothic bags super gothic');
 
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 1', '100% fibres pas naturelles', 1);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 2', '100% fibres pas naturelles', 2);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 2', '100% fibres pas naturelles', 3);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 3', '100% fibres pas naturelles', 4);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 4', '100% fibres pas naturelles', 1);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 5', '100% fibres pas naturelles', 2);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 6', '100% fibres pas naturelles', 3);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 7', '100% fibres pas naturelles', 4);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 8', '100% fibres pas naturelles', 1);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 9', '100% fibres pas naturelles', 2);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 10', '100% fibres pas naturelles', 3);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 11', '100% fibres pas naturelles', 3);
-INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 12', '100% fibres pas naturelles', 4);
+INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (50, 'Batbag', 'Basic little bag to show your support to batman.', 1);
+INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (55, 'Catbag', 'Lets be honest : cat is the best animal on earth. Heres a little bag to remind you the beauty of this noble animal.', 1);
+INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (45, 'Coffinbag ', 'This bag is perfect to transport your stuff like your voodoo dolls.', 1);
+INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (70, 'Skullbag', 'This bag is perfect for witches. It can be filled with all the spell and herbs you need for your journey !', 1);
+INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (30, 'Chimera ', 'This fantastic creature belong to the greek mythology, may this teddy bring you joy in your life !', 2);
+INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (20, 'Hydra', 'Another teddy belonging to the greek mythology, protect it from the mean heros who desire to destroy it !', 2);
+INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (20, 'Nounours', 'Lovely teddy bear which only wants to love and to be loved ! ', 2);
+INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (666, 'Satan', 'With this beautiful teddy, the dark Lord will always be with you', 2);
+
 GO
 
 SELECT * FROM Category;
