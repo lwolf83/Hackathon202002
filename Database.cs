@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
+using System.Data.Common;
 using System.Linq;
 using System.Collections.Specialized;
 
@@ -112,14 +113,14 @@ namespace EcoConception
             };
             return concernedProduct;
         }
-
+        
         public IEnumerable<Product> GetAllProducts()
         {
             String sql = "SELECT [id], [description], [name], [price], [categoryId] FROM product";
             // IEnumerable<object> allProducts = 
             return allProducts.Cast<Product>();
-        }
-        */
+        }*/
+        
         public void AddCategory(Category category)
         {
             throw new NotImplementedException("Not yet implemented. You should implement it.");
@@ -135,21 +136,51 @@ namespace EcoConception
             throw new NotImplementedException("Not yet implemented. You should implement it.");
         }
 
-        public Category GetCategoryById(int id)
+       public Category GetCategoryById(int id)
         {
-            String sql = "SELECT [Id], [Description], [Name] FROM Category WHERE Id = @Id";
-            IEnumerable<SqlParameter> parameters = new List<SqlParameter>
+            String sql = "SELECT [Id], [Description], [Name] FROM Category WHERE Id = " + id;
+            SqlCommand cmd = new SqlCommand();
+
+            // Combinez l'objet Command avec Connection.
+            cmd.Connection = Connection;
+            cmd.CommandText = sql;
+            Category newCategory = new Category();
+            using (DbDataReader reader = cmd.ExecuteReader())
             {
-                new SqlParameter("@Id", id)
-            };
-            // object concernedCategory = QueryOne(sql, parameters);
-            return concernedCategory;
-          
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    newCategory.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                    newCategory.Description = reader.GetString(reader.GetOrdinal("Description"));
+                    newCategory.Name = reader.GetString(reader.GetOrdinal("Name"));
+
+                }
+            }
+
+            return newCategory;
+           
         }
 
         public Category GetCategoryByName(String name)
         {
-            throw new NotImplementedException("Not yet implemented. You should implement it.");
+            String sql = "SELECT [Id], [Description], [Name] FROM Category WHERE Id = " + name;
+            SqlCommand cmd = new SqlCommand();
+
+            // Combinez l'objet Command avec Connection.
+            cmd.Connection = Connection;
+            cmd.CommandText = sql;
+            Category newCategory = new Category();
+            using (DbDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    reader.Read();
+                    newCategory.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                    newCategory.Description = reader.GetString(reader.GetOrdinal("Description"));
+                    newCategory.Name = reader.GetString(reader.GetOrdinal("Name"));
+                }
+            }
+            return newCategory;
         }
     }
 }
