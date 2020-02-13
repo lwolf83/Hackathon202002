@@ -2,8 +2,9 @@
 
 @Section['Content']
 	@Each 
-		@Current.Id
-		@Current.Name
+		@Current.Id.
+		@Current.Name - 
 		@Current.Description
+		<br>
 	@EndEach
 @EndSection
