@@ -170,7 +170,31 @@ namespace EcoConception
         }
     
 
-        public void RemoveCategoryById(int id)
+
+        public List<Category> GetAllCategories()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Connection;
+            cmd.CommandText = $"SELECT * FROM Category";
+            List<Category> categories = new List<Category>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Category category = new Category();
+                        category.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                        category.Name = reader.GetString(reader.GetOrdinal("Name"));
+                        category.Description = reader.GetString(reader.GetOrdinal("Description"));
+                        categories.Add(category);
+                    }
+                }
+            }
+            return categories;
+        }
+
+        public void RemoveCategoryById(int categoryId)
         {
             String sql = "DELETE FROM [Category] WHERE Id = " + id;
             SqlCommand cmd = new SqlCommand();
@@ -180,6 +204,7 @@ namespace EcoConception
             cmd.CommandText = sql;
         }
     
+
 
        public Category GetCategoryById(int id)
         {
@@ -192,6 +217,8 @@ namespace EcoConception
             Category newCategory = new Category();
             using (DbDataReader reader = cmd.ExecuteReader())
             {
+
+
                 if (reader.HasRows)
                 {
                     reader.Read();

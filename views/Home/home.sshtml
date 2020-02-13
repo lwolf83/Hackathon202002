@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"/>
     <!-- Personnal CSS -->
-    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="/Content/style.css"/>
     <!-- Personnal Meta Tags -->
     <META name="language" content="en"/>
     <meta name="description" content="" />
@@ -17,7 +17,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="" />
     <meta property="og:image" content="" />
-    <title></title>
+    <title>Gothic Shop</title>
   </head>
 
   <body>
@@ -56,7 +56,7 @@
       <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="carousel1-min.jpg" class="d-block w-100" alt="Welcome to the Gothic shop"/>
+            <img src="/Content/carousel1-min.jpg" class="d-block w-100" alt="Welcome to the Gothic shop"/>
                     </div>
         </div>
       </div>
@@ -64,16 +64,17 @@
         <div class="col">
           <h2 class="text-center">Welcome to Gothic shop</h2>
           <p class="text-justify">Are you attracted by the night and the darkness of your soul ? So are we ! Here's a shop where you can find many accessories to express your dark side : Bags, stuffed animals, figurines, ... Don't be shy and scream your love for the dark.</p>
-       <br>
 
        @Section['content']
 
-       <br>
-       
-       
+
        </div>
 
       </div>
+    </div>
+
+    <div style="color:#020a27">
+        @Section['Content']
     </div>
 
     <footer>
