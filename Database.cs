@@ -130,12 +130,35 @@ namespace EcoConception
             throw new NotImplementedException("Not yet implemented. You should implement it.");
         }
 
+        public List<Category> GetAllCategories()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Connection;
+            cmd.CommandText = $"SELECT * FROM Category";
+            List<Category> categories = new List<Category>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Category category = new Category();
+                        category.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                        category.Name = reader.GetString(reader.GetOrdinal("Name"));
+                        category.Description = reader.GetString(reader.GetOrdinal("Description"));
+                        categories.Add(category);
+                    }
+                }
+            }
+            return categories;
+        }
+
         public void RemoveCategoryById(int categoryId)
         {
             throw new NotImplementedException("Not yet implemented. You should implement it.");
         }
 
-        public Category GetCategoryById(int id)
+        public void GetCategoryById(int id)
         {
             String sql = "SELECT [Id], [Description], [Name] FROM Category WHERE Id = @Id";
             IEnumerable<SqlParameter> parameters = new List<SqlParameter>
@@ -143,7 +166,7 @@ namespace EcoConception
                 new SqlParameter("@Id", id)
             };
             // object concernedCategory = QueryOne(sql, parameters);
-            return concernedCategory;
+            //return concernedCategory;
           
         }
 
