@@ -1,0 +1,19 @@
+
+CREATE TABLE Product (
+id INT PRIMARY KEY IDENTITY(1,1),
+price DECIMAL,
+"name" VARCHAR(50) NOT NULL,
+"description" VARCHAR(255),
+category_id INT NOT NULL,
+FOREIGN KEY (category_id) REFERENCES Category(id)
+ON UPDATE CASCADE 
+ON DELETE CASCADE
+);
+
+CREATE TABLE Category (
+id INT PRIMARY KEY IDENTITY(1,1),
+"name" VARCHAR(50) NOT NULL,
+"description" VARCHAR(255)
+);
+
+
