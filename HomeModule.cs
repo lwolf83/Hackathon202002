@@ -43,16 +43,20 @@ namespace EcoConception
         {
             Get("/", ServeHome);
             Get("/products", ServeProducts);
-
+            Get("/categories", ServeCategories);
         }
 
         private dynamic ServeHome(object manyParameters)
         {
-            Database.GetCategoryById(1);
             return View["home.sshtml", Products];
         }
 
         private dynamic ServeProducts(object manyParameters)
+        {
+            return View["Products.sshtml", Products];
+        }
+
+        private dynamic ServeCategories(object manyParameters)
         {
             return View["Products.sshtml", Products];
         }
