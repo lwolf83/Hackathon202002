@@ -1,0 +1,35 @@
+﻿<html>
+<head>
+    <title>
+        Hello !
+    </title>
+</head>
+<body>
+    <h1>EcoConception</h1>
+    <p>Don't have any CSS, please write my body !</p>
+    <h2>Products</h2>
+    <table>
+        <tr>
+            <th>Prix</th>
+            <th>Catégorie</th>
+            <th>Nom</th>
+            <th>Description</th>
+        </tr>
+    @Each
+        <tr>
+            <td>
+                @Current.Price
+            </td>
+            <td>
+                @Current.Category.Name
+            </td>
+            <td>
+                @Current.Name
+            </td>
+            <td>
+                @Current.Description
+            </td>
+        </tr>
+    @EndEach
+</body>
+</html>
