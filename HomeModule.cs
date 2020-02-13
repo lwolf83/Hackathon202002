@@ -48,6 +48,7 @@ namespace EcoConception
 
         private dynamic ServeHome(object manyParameters)
         {
+            Database.GetCategoryById(1);
             return View["home.sshtml", Products];
         }
 
