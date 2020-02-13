@@ -69,14 +69,9 @@
       </div>
     </div>
 
-    <div class="container back">
-        <div class="row">
-          <div class="col-12">
-            <h2 class="text-center">Categories of our products</h2>
-            <div class="text-justify"> @Section['Content'] </div>
-          </div>
-        </div>
-      </div>
+    <div style="color:#020a27">
+        @Section['Content']
+    </div>
 
     <footer>
       <div class="container basdepage">
