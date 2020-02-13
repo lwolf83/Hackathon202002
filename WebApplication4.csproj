@@ -106,6 +106,7 @@
     <Content Include="views\Home\index.sshtml" />
     <Content Include="views\Home\DetailProduct.sshtml" />
     <Content Include="views\Home\categories.sshtml" />
+    <Content Include="views\Home\ProductsByCategory.sshtml" />
 
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -13,8 +13,7 @@ namespace EcoConception
         public override IEnumerable<Product> Products
         {
 
-            get;
-            
+            get; 
 
         }
 
@@ -32,7 +31,10 @@ namespace EcoConception
 
             Get("/detailproducts-{idProduct}", parameters => ServeDetailProducts(parameters.idProduct));
             Get("/products", ServeProducts);
+            Get("/categories", ServeCategories);
+            Get("/categories/cat-{idCategory}", parameters => ServeProductsByCategory(parameters.idCategory));
             //Get("/categories", ServeCategories);
+
 
         }
 
@@ -55,10 +57,12 @@ namespace EcoConception
             Product currentProduct = Database.GetProductById(idProduct);
             return View["DetailProduct.sshtml", currentProduct];
         }
-        
-       /* private dynamic ServeCategories(object manyParameters)
-        {
 
-        }*/
+        private dynamic ServeProductsByCategory(int idCategory)
+        {
+            List<Product> products = Database.GetProductsByCategory(idCategory);
+            return View["ProductsByCategory.sshtml", products];
+        }
+
     }
 }
