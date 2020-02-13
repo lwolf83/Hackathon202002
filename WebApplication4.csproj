@@ -94,6 +94,7 @@
     <None Include="packages.config" />
     <Content Include="views\Home\home.sshtml" />
     <Content Include="views\Home\products.sshtml" />
+    <Content Include="views\Home\categories.sshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
