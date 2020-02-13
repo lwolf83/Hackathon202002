@@ -196,7 +196,7 @@ namespace EcoConception
 
         public void RemoveCategoryById(int categoryId)
         {
-            String sql = "DELETE FROM [Category] WHERE Id = " + id;
+            String sql = "DELETE FROM [Category] WHERE Id = " + categoryId;
             SqlCommand cmd = new SqlCommand();
 
             // Combinez l'objet Command avec Connection.

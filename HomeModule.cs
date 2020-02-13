@@ -30,7 +30,7 @@ namespace EcoConception
 
             Get("/detailproducts-{idProduct}", parameters => ServeDetailProducts(parameters.idProduct));
             Get("/products", ServeProducts);
-            Get("/categories", ServeCategories);
+            //Get("/categories", ServeCategories);
 
         }
 
@@ -53,9 +53,9 @@ namespace EcoConception
             return View["DetailProduct.sshtml", currentProduct];
         }
         
-        private dynamic ServeCategories(object manyParameters)
+       /* private dynamic ServeCategories(object manyParameters)
         {
 
-        }
+        }*/
     }
 }
