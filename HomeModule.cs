@@ -12,8 +12,7 @@ namespace EcoConception
     {
         public override IEnumerable<Product> Products
         {
-            get;
-            
+            get; 
         }
 
         public override IEnumerable<Category> Categories 
@@ -29,6 +28,7 @@ namespace EcoConception
             Get("/", ServeHome);
             Get("/products", ServeProducts);
             Get("/categories", ServeCategories);
+            Get("/categories/cat-{idCategory}", parameters => ServeProductsByCategory(parameters.idCategory));
         }
 
         private dynamic ServeHome(object manyParameters)
@@ -44,6 +44,12 @@ namespace EcoConception
         private dynamic ServeCategories(object manyParameters)
         {
             return View["categories.sshtml", Categories];
+        }
+
+        private dynamic ServeProductsByCategory(int idCategory)
+        {
+            List<Product> products = Database.GetProductsByCategory(idCategory);
+            return View["ProductsByCategory.sshtml", products];
         }
     }
 }

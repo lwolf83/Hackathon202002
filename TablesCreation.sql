@@ -26,7 +26,7 @@ Id INT PRIMARY KEY IDENTITY(1,1),
 GO
 CREATE TABLE Product (
 Id INT PRIMARY KEY IDENTITY(1,1),
-Price DECIMAL,
+Price MONEY,
 "Name" VARCHAR(50) NOT NULL,
 "Description" VARCHAR(255),
 CategoryId INT NOT NULL,
@@ -52,3 +52,6 @@ INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, '
 INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 11', '100% fibres pas naturelles', 3);
 INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (23, 'peluche 12', '100% fibres pas naturelles', 4);
 GO
+
+SELECT * FROM Category;
+SELECT * FROM Product;

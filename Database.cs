@@ -82,18 +82,31 @@ namespace EcoConception
             };
             Query(sql, parameters);*/
         }
-        /*
-        public IEnumerable<object> GetProductsByCategory(Category category)
+        
+        public List<Product> GetProductsByCategory(int idCategory)
         {
-            String sql = "SELECT [id], [description], [name], [price], [categoryId] FROM product " +
-                         "WHERE categoryId = @CategoryId";
-            IEnumerable<SqlParameter> parameters = new List<SqlParameter>
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Connection;
+            cmd.CommandText = $"SELECT * FROM Product WHERE CategoryId = {idCategory}";
+            List<Product> products = new List<Product>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                new SqlParameter("@CategoryId", category.Id)
-            };
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Product product = new Product();
+                        product.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                        product.Price = reader.GetDecimal(reader.GetOrdinal("Price"));
+                        product.Name = reader.GetString(reader.GetOrdinal("Name"));
+                        product.Description = reader.GetString(reader.GetOrdinal("Description"));
+                        products.Add(product);
+                    }
+                }
+            }
             return products;
         }
-
+        /*
         public Product GetProductById(int id)
         {
             String sql = "SELECT [id], [Description], [Name], [Price], [CategoryId] FROM Product WHERE id = @Id";
@@ -120,7 +133,7 @@ namespace EcoConception
             // IEnumerable<object> allProducts = 
             return allProducts.Cast<Product>();
         }*/
-        
+
         public void AddCategory(Category category)
         {
             throw new NotImplementedException("Not yet implemented. You should implement it.");
