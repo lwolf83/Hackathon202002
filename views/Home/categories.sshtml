@@ -1,0 +1,19 @@
+﻿@Master['home']
+
+@Section['Content']
+    <div class="container back">
+    <div class="row">
+        <div class="col-12">
+        <h2 class="text-center">Categories of our products</h2>
+        <div class="text-justify">  
+            @Each 
+		        @Current.Id.
+		        @Current.Name - 
+		        @Current.Description
+		        <br>
+	        @EndEach
+        </div>
+        </div>
+    </div>
+    </div>
+@EndSection
