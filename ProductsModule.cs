@@ -8,6 +8,7 @@ namespace EcoConception
     {
 
         public override IEnumerable<Product> Products { get; }
+        
         public override IEnumerable<Category> Categories { get; }
 
         public ProductsModule()

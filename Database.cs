@@ -161,7 +161,6 @@ namespace EcoConception
 
 
        public Category GetCategoryById(int id)
-
         {
             String sql = "SELECT [Id], [Description], [Name] FROM Category WHERE Id = " + id;
             SqlCommand cmd = new SqlCommand();
@@ -172,6 +171,7 @@ namespace EcoConception
             Category newCategory = new Category();
             using (DbDataReader reader = cmd.ExecuteReader())
             {
+
 
                 if (reader.HasRows)
                 {
