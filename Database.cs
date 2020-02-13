@@ -135,15 +135,15 @@ namespace EcoConception
             throw new NotImplementedException("Not yet implemented. You should implement it.");
         }
 
-        public Category GetCategoryById(int id)
+        public void  GetCategoryById(int id)
         {
             String sql = "SELECT [Id], [Description], [Name] FROM Category WHERE Id = @Id";
             IEnumerable<SqlParameter> parameters = new List<SqlParameter>
             {
                 new SqlParameter("@Id", id)
             };
-            // object concernedCategory = QueryOne(sql, parameters);
-            return concernedCategory;
+            ///object concernedCategory = QueryOne(sql, parameters);
+            //return concernedCategory;
           
         }
 
