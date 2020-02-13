@@ -1,0 +1,30 @@
+body {
+	background-color : #020a27;
+	
+}
+
+body .back {
+	background-color : #f2f4f4 ;
+}
+
+footer div {
+    background-color: #f2f4f4 ;
+    
+}
+footer .basdepage{
+    border-top: 1px solid #020a27;
+}
+
+ .nav-item a {
+	color: #020a27 ;
+}
+
+.list-group{
+    padding: 1%;
+}
+
+.nav-item a:hover {
+    border-bottom: 1px solid;     
+    background: #020a27 ;
+    color: #f2f4f4
+  }
