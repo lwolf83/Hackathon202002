@@ -58,15 +58,15 @@
           <div class="carousel-item active">
             <img src="/Content/carousel1-min.jpg" class="d-block w-100" alt="Welcome to the Gothic shop"/>
                     </div>
-        </div>
+      </div>
       </div>
       <div class="row">
         <div class="col">
           <h2 class="text-center">Welcome to Gothic shop</h2>
           <p class="text-justify">Are you attracted by the night and the darkness of your soul ? So are we ! Here's a shop where you can find many accessories to express your dark side : Bags, stuffed animals, figurines, ... Don't be shy and scream your love for the dark.</p>
         </div>
-
       </div>
+            @Section['content']
     </div>
 
     <footer>

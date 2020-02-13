@@ -28,3 +28,10 @@ footer .nav-item a:hover {
     background: #020a27 ;
     color: #f2f4f4
   }
+
+  .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
