@@ -64,7 +64,10 @@
         <div class="col">
           <h2 class="text-center">Welcome to Gothic shop</h2>
           <p class="text-justify">Are you attracted by the night and the darkness of your soul ? So are we ! Here's a shop where you can find many accessories to express your dark side : Bags, stuffed animals, figurines, ... Don't be shy and scream your love for the dark.</p>
-        </div>
+       
+       @Section['Content']
+       
+       </div>
 
       </div>
     </div>

@@ -12,30 +12,15 @@ namespace EcoConception
     {
         public override IEnumerable<Product> Products
         {
-            get
-            {
-                // You must get products from a database
-                // in the real version. This code is only
-                // here to show you how to pass a model
-                // to your view
-                // Database.GetMostRecentProducts();
-                List<Product> products = new List<Product>();
-                IEnumerable<Category> categories = Categories;
-                Category badassCategory = Categories.Single(category => category.Name == "Badaa$$");
-                products.Add(new Product { Name = "Corentin", Price = 30000, Category = badassCategory, Description = "SuperDev" });
-                return products;
-            }
+            get;
+            
         }
 
         public override IEnumerable<Category> Categories 
         { 
             get
             {
-                List<Category> categories = new List<Category>
-                {
-                    new Category{ Name = "Badaa$$", Description = "Really good stuffgfdgfdgretezfdsgfdfezrez" }
-                };
-                return categories;
+                return Database.GetAllCategories();
             }
         }
 
@@ -58,7 +43,7 @@ namespace EcoConception
 
         private dynamic ServeCategories(object manyParameters)
         {
-            return View["Products.sshtml", Products];
+            return View["categories.sshtml", Categories];
         }
     }
 }

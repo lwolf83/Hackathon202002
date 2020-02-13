@@ -1,0 +1,9 @@
+﻿@Master['home']
+
+@Section['Content']
+	@Each 
+		@Current.Id
+		@Current.Name
+		@Current.Description
+	@EndEach
+@EndSection
