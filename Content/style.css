@@ -15,7 +15,7 @@ footer .basdepage{
     border-top: 1px solid #020a27;
 }
 
- .nav-item a {
+ footer .nav-item a {
 	color: #020a27 ;
 }
 
@@ -23,7 +23,7 @@ footer .basdepage{
     padding: 1%;
 }
 
-.nav-item a:hover {
+footer .nav-item a:hover {
     border-bottom: 1px solid;     
     background: #020a27 ;
     color: #f2f4f4
