@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-around">        
         <div class = "col-6"> 
-            <h2>@Model.Name </h2></br> <h3>@Model.Price € </h3></br>Livraison gratuite à partir de 66.6 € d'achat </br> @Model.Description
+            <h2>@Model.Name </h2></br> <h3>@Model.Price € </h3><p>@Model.Description</p></br><p>Livraison gratuite à partir de 66.6 € d'achat</p>
         </div>
         <div class = "col-6"> <img src="@Path['~/Content/products-[@Model.Id].jpg']"></div>
      
