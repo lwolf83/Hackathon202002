@@ -82,6 +82,7 @@
     <Content Include="Content\products-[7].jpg" />
     <Content Include="Content\products-[8].jpg" />
     <Content Include="Content\carousel1-min.jpg" />
+    <Content Include="Content\Product-[1].jpg" />
     <Content Include="Content\style.css" />
     <Content Include="TablesCreation.sql" />
     <Content Include="Web.config" />
@@ -102,8 +103,10 @@
     <None Include="packages.config" />
     <Content Include="views\Home\home.sshtml" />
     <Content Include="views\Home\products.sshtml" />
+    <Content Include="views\Home\index.sshtml" />
     <Content Include="views\Home\DetailProduct.sshtml" />
     <Content Include="views\Home\categories.sshtml" />
+
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

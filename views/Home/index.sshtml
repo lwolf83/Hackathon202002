@@ -1,0 +1,29 @@
+﻿@Master['home']
+
+@Section['content']
+
+<div class="row">
+         
+@Each
+   <div class="col-4">            
+        <p class="text-center">
+       
+        @Current.Name
+        @Current.Price
+        @Current.Description
+        @Current.Category
+        </p>
+   
+
+   <div class="row">
+         <img src="@Path['~/Content/Product-[@Current.Id].jpg']"/>
+
+    </div>
+
+    </div>
+@EndEach
+
+</div>
+ 
+
+@EndSection

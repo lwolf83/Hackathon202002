@@ -12,8 +12,10 @@ namespace EcoConception
     {
         public override IEnumerable<Product> Products
         {
+
             get;
             
+
         }
 
         public override IEnumerable<Category> Categories 
@@ -36,7 +38,8 @@ namespace EcoConception
 
         private dynamic ServeHome(object manyParameters)
         {
-            return View["home.sshtml", Products];
+            List<Product> productsRandom = Database.GetThreeRandomProducts();
+            return View["index.sshtml", productsRandom];
         }
 
         private dynamic ServeProducts(object manyParameters)
