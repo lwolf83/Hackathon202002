@@ -88,10 +88,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="View\Home\home.sshtml" />
     <Content Include="EcoConception.cd" />
     <None Include="packages.config" />
-    <Content Include="View\Home\products.sshtml" />
+    <Content Include="views\Home\home.sshtml" />
+    <Content Include="views\Home\products.sshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
