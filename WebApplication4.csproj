@@ -73,6 +73,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\f_icon1.jpg" />
+    <Content Include="Content\f_icon2.jpg" />
+    <Content Include="Content\f_icon3.jpg" />
+    <Content Include="Content\f_icon4.jpg" />
     <Content Include="Content\products-[1].jpg" />
     <Content Include="Content\products-[2].jpg" />
     <Content Include="Content\products-[3].jpg" />
