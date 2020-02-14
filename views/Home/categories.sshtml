@@ -1,19 +1,26 @@
 ﻿@Master['home']
 
-@Section['Content']
-    <div class="container back">
-    <div class="row">
-        <div class="col-12">
-        <h2 class="text-center">Categories of our products</h2>
-        <div class="text-justify">  
-            @Each 
-		        @Current.Id.
-		        @Current.Name - 
-		        @Current.Description
-		        <br>
-	        @EndEach
+@Section['content']
+<h2 class="text-center">Categories of our products</h2>
+ <div class="container">
+  <div class="row">
+    @Each
+    <div class="col-xl-3 col-md-6 mb-4 center">
+    <a href="/categories/cat-@Current.Id">
+      <div class="card text-white bg-dark mb-3  ">
+      
+        <img class="rounded" src="@Path['~/Content/category-[@Current.Id].jpg']" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title">@Current.Name</h5>
+            <div class="card-text text-black-30">@Current.Description</div>
         </div>
-        </div>
+        
+      </div>
+      </a>
+     </div>
+      @EndEach
     </div>
-    </div>
+    </di> 
+
+    
 @EndSection

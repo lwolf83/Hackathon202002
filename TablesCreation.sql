@@ -46,3 +46,6 @@ INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (20, '
 INSERT INTO Product ([Price], [Name], [Description], [CategoryId]) VALUES (666, 'Satan', 'With this beautiful teddy, the dark Lord will always be with you', 2);
 
 GO
+
+SELECT * FROM Category;
+SELECT * FROM Product;

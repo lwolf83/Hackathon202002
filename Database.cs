@@ -82,17 +82,31 @@ namespace EcoConception
             cmd.Connection = Connection;
             cmd.CommandText = sql;
         }
-        /*
-        public IEnumerable<object> GetProductsByCategory(Category category)
+        
+        public List<Product> GetProductsByCategory(int idCategory)
         {
-            String sql = "SELECT [id], [description], [name], [price], [categoryId] FROM product " +
-                         "WHERE categoryId = @CategoryId";
-            IEnumerable<SqlParameter> parameters = new List<SqlParameter>
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Connection;
+            cmd.CommandText = $"SELECT * FROM Product WHERE CategoryId = {idCategory}";
+            List<Product> products = new List<Product>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                new SqlParameter("@CategoryId", category.Id)
-            };
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Product product = new Product();
+                        product.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                        product.Price = reader.GetDecimal(reader.GetOrdinal("Price"));
+                        product.Name = reader.GetString(reader.GetOrdinal("Name"));
+                        product.Description = reader.GetString(reader.GetOrdinal("Description"));
+                        products.Add(product);
+                    }
+                }
+            }
             return products;
-        }*/
+        }
+        
 
         public Product GetProductById(int id)
         {
@@ -148,8 +162,9 @@ namespace EcoConception
             // IEnumerable<object> allProducts = 
             return allProducts.Cast<Product>();
         }*/
-        
+
         public void AddCategory(string name, string description)
+
         {
             String sql = "INSERT INTO [Category] (Name, Description) VALUES ('" + name + "', '" + description + "')";
             SqlCommand cmd = new SqlCommand();
@@ -253,6 +268,56 @@ namespace EcoConception
                 }
             }
             return newCategory;
+        }
+
+        public List<Product> GetAllProducts()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Connection;
+            cmd.CommandText = $"SELECT Id, Price, Name, Description, CategoryId FROM Product";
+            List<Product> products = new List<Product>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Product product = new Product();
+                        product.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                        product.Price = reader.GetInt32(reader.GetOrdinal("Price"));
+                        product.Name = reader.GetString(reader.GetOrdinal("Name"));
+                        product.Description = reader.GetString(reader.GetOrdinal("Description"));
+                        product.CategoryId = reader.GetInt32(reader.GetOrdinal("CategoryId"));
+                        products.Add(product);
+                    }
+                }
+            }
+            return products;
+        }
+
+        public List<Product> GetThreeRandomProducts()
+        {
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = Connection;
+            cmd.CommandText = $"SELECT TOP (5) Id, Price, Name, Description, CategoryId FROM Product ORDER BY NEWID()";
+            List<Product> products = new List<Product>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if (reader.HasRows)
+                {
+                    while (reader.Read())
+                    {
+                        Product product = new Product();
+                        product.Id = reader.GetInt32(reader.GetOrdinal("Id"));
+                        product.Price = reader.GetDecimal(reader.GetOrdinal("Price"));
+                        product.Name = reader.GetString(reader.GetOrdinal("Name"));
+                        product.Description = reader.GetString(reader.GetOrdinal("Description"));
+                        product.CategoryId = reader.GetInt32(reader.GetOrdinal("CategoryId"));
+                        products.Add(product);
+                    }
+                }
+            }
+            return products;
         }
     }
 }

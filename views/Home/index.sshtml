@@ -1,0 +1,74 @@
+﻿@Master['home']
+
+@Section['content']
+<div class="container ">
+    <div class="row justify-content-center">
+    <h2 class="text-center">Welcome to Gothic shop</h2>
+    <p class="text-justify">Are you attracted by the night and the darkness of your soul ? So are we ! Here's a shop where you can find many accessories to express your dark side : Bags, stuffed animals, figurines, ... Don't be shy and scream your love for the dark.</p>
+
+        @Each
+           <div class="col-4 bg-dark m-1">
+           <a href="detailproducts-@Current.Id">
+                <p class="text-center">@Current.Name</p>
+                <p class="text-left">Only @Current.Price &euro;<p>
+                  
+                <p><img class="rounded" src="@Path['~/Content/products-[@Current.Id].jpg']"/></p>
+                <p class="text-left">@Current.Description</p> 
+            </a>
+            </div>
+        @EndEach
+        <br>
+    </div>
+    </br>
+    </br>
+    <section class="features-area section_gap">
+        <div class="container">
+            <div class="row features-inner">
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-features">
+                        <div class="f-icon">
+                            <img src="@Path['~/Content/f_icon1.jpg']" alt=""></br>
+                        </div>
+                        <h6>Free Delivery</h6>
+                        <p>Free Shipping on all order</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-features">
+                        <div class="f-icon">
+                        <img src="@Path['~/Content/f_icon2.jpg']" alt=""></br>
+                        </div>
+                    <h6>Return Policy</h6>
+                    <p>Free Shipping on all order</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-features">
+                        <div class="f-icon">
+                        <img src="@Path['~/Content/f_icon3.jpg']" alt=""></br>
+                        </div>
+                    <h6>24/7 Support</h6>
+                    <p>Free Shipping on all order</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="single-features">
+                        <div class="f-icon">
+                        <img src="@Path['~/Content/f_icon4.jpg']" alt=""></br>
+                        </div>
+                    <h6>Secure Payment</h6>
+                    <p>Free Shipping on all order</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    </br>
+    </br>
+</div>
+
+@EndSection
