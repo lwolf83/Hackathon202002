@@ -2,21 +2,21 @@
 
 @Section['content']
 <div class="container">
-<div class="row">
-@Each
-          <div class="col-lg-4 col-md-6 mb-4">
-            <div class="card h-100">
-              <a href="/detailproducts-@Current.Id"><img class="card-img-top" src="@Path['~/Content/products-[@Current.Id].jpg']" alt="@Current.Name - @Current.Description"></a>
-              <div class="card-body">
-                <h4 class="card-title">
-                  <a href="/detailproducts-@Current.Id">@Current.Name</a>
-                </h4>
-                <h5>@Current.Price</h5>
-                <p class="card-text">@Current.Description</p>
-              </div>              
-            </div>
-          </div>
-@EndEach
-</div>
+    <div class="row">
+    @Each
+              <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100">
+                  <a href="/detailproducts-@Current.Id"><img class="card-img-top" src="@Path['~/Content/products-(@Current.Id).jpg']" alt="@Current.Name - @Current.Description"></a>
+                  <div class="card-body">
+                    <h4 class="card-title">
+                      <a href="/detailproducts-@Current.Id">@Current.Name</a>
+                    </h4>
+                    <h5>@Current.Price</h5>
+                    <p class="card-text">@Current.Description</p>
+                  </div>              
+                </div>
+              </div>
+    @EndEach
+    </div>
 </div>
 @EndSection

@@ -6,7 +6,7 @@
     <h2 class="text-center">Welcome to Gothic shop</h2>
     <p class="text-justify">Are you attracted by the night and the darkness of your soul ? So are we ! Here's a shop where you can find many accessories to express your dark side : Bags, stuffed animals, figurines, ... Don't be shy and scream your love for the dark.</p>
 
-            @Each
+   @Each
     <div class="col-xl-4 col-md-6 mb-4 center">
     <a href="detailproducts-@Current.Id">
       <div class="card text-white bg-dark mb-3  ">
@@ -22,7 +22,7 @@
       </a>
      </div>
       @EndEach
-        
+
     </div>
     <br>
     
