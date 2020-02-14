@@ -91,9 +91,6 @@
                   <li>
                     <a class="nav-link lead mb-0" href="categories">Category</a>
                   </li>
-                  <li>
-                    <a class="nav-link lead mb-0" href="contact.html">Contact</a>
-                  </li>
                 </ul>
 
               </div>
@@ -101,12 +98,12 @@
             </div>
 
           </div>
-        </div>
+        
       
     </footer>
     <section class="copyright py-4 text-center text-white">
         <div class = "container">
-            <small>Copyright © EILL - Gothic Shop - 2020</small>
+            <h6>Copyright © EILL - Gothic Shop - 2020</h6>
         </div>
     </section>
 
