@@ -6,21 +6,27 @@
     <h2 class="text-center">Welcome to Gothic shop</h2>
     <p class="text-justify">Are you attracted by the night and the darkness of your soul ? So are we ! Here's a shop where you can find many accessories to express your dark side : Bags, stuffed animals, figurines, ... Don't be shy and scream your love for the dark.</p>
 
-        @Each
-           <div class="col-4 bg-dark m-1">
-           <a href="detailproducts-@Current.Id">
-                <p class="text-center">@Current.Name</p>
-                <p class="text-left">Only @Current.Price &euro;<p>
-                  
-                <p><img class="rounded" src="@Path['~/Content/products-(@Current.Id).jpg']"/></p>
-                <p class="text-left">@Current.Description</p> 
-            </a>
-            </div>
-        @EndEach
-        <br>
+   @Each
+    <div class="col-xl-4 col-md-6 mb-4 center">
+    <a href="detailproducts-@Current.Id">
+      <div class="card text-white bg-dark mb-3  ">
+      
+        <img class="rounded" src="@Path['~/Content/products-(@Current.Id).jpg']" alt="Product image"/>
+        <div class="card-body text-center">
+          <h5 class="card-title">@Current.Name</h5>
+          <p class="text-left">Only @Current.Price &euro;<p>
+            <div class="card-text text-black-30">@Current.Description</div>
+        </div>
+        
+      </div>
+      </a>
+     </div>
+      @EndEach
+
     </div>
-    </br>
-    </br>
+    <br>
+    
+    
     <section class="features-area section_gap">
         <div class="container">
             <div class="row features-inner">
@@ -28,7 +34,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-features">
                         <div class="f-icon">
-                            <img src="@Path['~/Content/f_icon1.jpg']" alt=""></br>
+                            <img src="@Path['~/Content/f_icon1.jpg']" alt="Free Delivery">
                         </div>
                         <h6>Free Delivery</h6>
                         <p>Free Shipping on all order</p>
@@ -38,7 +44,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-features">
                         <div class="f-icon">
-                        <img src="@Path['~/Content/f_icon2.jpg']" alt=""></br>
+                        <img src="@Path['~/Content/f_icon2.jpg']" alt="Return Policy">
                         </div>
                     <h6>Return Policy</h6>
                     <p>Free Shipping on all order</p>
@@ -48,7 +54,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-features">
                         <div class="f-icon">
-                        <img src="@Path['~/Content/f_icon3.jpg']" alt=""></br>
+                        <img src="@Path['~/Content/f_icon3.jpg']" alt="24/7 Support">
                         </div>
                     <h6>24/7 Support</h6>
                     <p>Free Shipping on all order</p>
@@ -58,7 +64,7 @@
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="single-features">
                         <div class="f-icon">
-                        <img src="@Path['~/Content/f_icon4.jpg']" alt=""></br>
+                        <img src="@Path['~/Content/f_icon4.jpg']" alt="Secure Payment">
                         </div>
                     <h6>Secure Payment</h6>
                     <p>Free Shipping on all order</p>
@@ -67,8 +73,8 @@
             </div>
         </div>
     </section>
-    </br>
-    </br>
+    <br>
+   
 </div>
 
 @EndSection

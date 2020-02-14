@@ -6,7 +6,7 @@
     @Each
               <div class="col-lg-4 col-md-6 mb-4">
                 <div class="card h-100">
-                  <a href="/detailproducts-@Current.Id"><img class="card-img-top" src="@Path['~/Content/products-(@Current.Id).jpg']" alt=""></a>
+                  <a href="/detailproducts-@Current.Id"><img class="card-img-top" src="@Path['~/Content/products-(@Current.Id).jpg']" alt="@Current.Name - @Current.Description"></a>
                   <div class="card-body">
                     <h4 class="card-title">
                       <a href="/detailproducts-@Current.Id">@Current.Name</a>
