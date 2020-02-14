@@ -33,8 +33,8 @@ CategoryId INT NOT NULL,
 FOREIGN KEY (CategoryId) REFERENCES Category(Id)
 );
 GO
-INSERT INTO Category ([Name], [Description]) VALUES ('Stuffed toys', 'Gothic stuffed toys');
 INSERT INTO Category ([Name], [Description]) VALUES ('Bags', 'Gothic bags super gothic');
+INSERT INTO Category ([Name], [Description]) VALUES ('Stuffed toys', 'Gothic stuffed toys');
 INSERT INTO Category ([Name], [Description]) VALUES ('Jewelrey', 'Gothic jewelery');
 INSERT INTO Category ([Name], [Description]) VALUES ('Figurine', 'Gothic figurine');
 
