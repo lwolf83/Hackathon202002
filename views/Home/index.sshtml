@@ -12,7 +12,7 @@
                 <p class="text-center">@Current.Name</p>
                 <p class="text-left">Only @Current.Price &euro;<p>
                   
-                <p><img class="rounded" src="@Path['~/Content/products-[@Current.Id].jpg']"/></p>
+                <p><img class="rounded" src="@Path['~/Content/products-(@Current.Id).jpg']"/></p>
                 <p class="text-left">@Current.Description</p> 
             </a>
             </div>
