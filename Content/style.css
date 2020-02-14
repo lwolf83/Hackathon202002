@@ -7,27 +7,13 @@ body .back {
 	background-color : #f2f4f4 ;
 }
 
-footer div {
-    background-color: #f2f4f4 ;
-    
-}
-footer .basdepage{
-    border-top: 1px solid #020a27;
-}
 
- footer .nav-item a {
-	color: #020a27 ;
-}
 
 .list-group{
     padding: 1%;
 }
 
-footer .nav-item a:hover {
-    border-bottom: 1px solid;     
-    background: #020a27 ;
-    color: #f2f4f4
-  }
+
 
   .center {
     display: block;
@@ -50,6 +36,42 @@ footer .nav-item a:hover {
     margin-top : 5%;
     margin-bottom : 5%;
     text-align: center;
+}
+
+.footer {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #2c3e50;
+    color: #fff;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+footer .list-unstyled a
+{
+    color : white;
+}
+
+
+.copyright {
+    background-color: #1a252f;
+}
+.text-white {
+    color: #fff;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.py-4 {
+    padding-bottom: 1.5rem;
+    padding-top: 1.5rem;
 }
 
 
