@@ -106,7 +106,7 @@ namespace EcoConception
             }
             return products;
         }
-        /*
+        
 
         public Product GetProductById(int id)
         {
@@ -287,7 +287,7 @@ namespace EcoConception
                         product.Price = reader.GetInt32(reader.GetOrdinal("Price"));
                         product.Name = reader.GetString(reader.GetOrdinal("Name"));
                         product.Description = reader.GetString(reader.GetOrdinal("Description"));
-                        product.Category = reader.GetInt32(reader.GetOrdinal("CategoryId"));
+                        product.CategoryId = reader.GetInt32(reader.GetOrdinal("CategoryId"));
                         products.Add(product);
                     }
                 }
@@ -299,7 +299,7 @@ namespace EcoConception
         {
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = Connection;
-            cmd.CommandText = $"SELECT TOP (3) Id, Price, Name, Description, CategoryId FROM Product ORDER BY NEWID()";
+            cmd.CommandText = $"SELECT TOP (5) Id, Price, Name, Description, CategoryId FROM Product ORDER BY NEWID()";
             List<Product> products = new List<Product>();
             using (SqlDataReader reader = cmd.ExecuteReader())
             {
@@ -312,7 +312,7 @@ namespace EcoConception
                         product.Price = reader.GetDecimal(reader.GetOrdinal("Price"));
                         product.Name = reader.GetString(reader.GetOrdinal("Name"));
                         product.Description = reader.GetString(reader.GetOrdinal("Description"));
-                        product.Category = reader.GetInt32(reader.GetOrdinal("CategoryId"));
+                        product.CategoryId = reader.GetInt32(reader.GetOrdinal("CategoryId"));
                         products.Add(product);
                     }
                 }

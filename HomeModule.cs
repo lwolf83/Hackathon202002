@@ -50,7 +50,7 @@ namespace EcoConception
             return View["Products.sshtml", Products];
         }
 
-
+        
         private dynamic ServeDetailProducts(int idProduct)
         {            
 
@@ -62,6 +62,11 @@ namespace EcoConception
         {
             List<Product> products = Database.GetProductsByCategory(idCategory);
             return View["ProductsByCategory.sshtml", products];
+        }
+
+        private dynamic ServeCategories(object manyParameters)
+        {
+            return View["categories.sshtml", Categories];
         }
 
     }
