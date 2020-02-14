@@ -36,7 +36,18 @@ footer .nav-item a:hover {
     width: 50%;
   }
 
-body .container
+
+
+.features-area {
+   
+    box-shadow: 1px 1px 12px #555;
+    background-color: white;
+    padding : 15px;
+}
+
+.single-features 
 {
+    text-align: center;
     margin-top  = 5%;
 }
+
