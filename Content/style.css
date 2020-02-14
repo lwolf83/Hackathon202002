@@ -40,12 +40,3 @@ body .container
 {
     margin-top  = 5%;
 }
-
-.card-title{
-    color: #370225;
-}
-
-.card-body a :hover{
-    text-decoration-color: #370225;
-    
-}

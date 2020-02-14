@@ -7,12 +7,12 @@
     @Each
     <div class="col-xl-3 col-md-6 mb-4 center">
     <a href="/categories/cat-@Current.Id">
-      <div class="card border-0 shadow">
+      <div class="card text-white bg-dark mb-3  ">
       
         <img class="rounded" src="@Path['~/Content/category-[@Current.Id].jpg']" class="card-img-top" alt="...">
         <div class="card-body text-center">
-          <h5 class="card-title mb-0">@Current.Name</h5>
-            <div class="card-text text-black-50">@Current.Description</div>
+          <h5 class="card-title">@Current.Name</h5>
+            <div class="card-text text-black-30">@Current.Description</div>
         </div>
         
       </div>
