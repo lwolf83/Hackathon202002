@@ -2,26 +2,25 @@
 
 @Section['content']
 <h2 class="text-center">Categories of our products</h2>
-    <div class="container">
-    <div class="row">
-        <div class="col-12">
-        <table class="table  table-striped">
-          <thead>
-            <tr>
-              <th scope="col">Name</th>
-              <th scope="col">Description</th>
-            </tr>
-          </thead>
-          <tbody> 
-            @Each 
-		        <tr>
-		        <td><a href="/categories/cat-@Current.Id">@Current.Name</a></td> 
-		        <td><a href="/categories/cat-@Current.Id">@Current.Description</a></td>
-		        </tr>
-	        @EndEach
-          </tbody>
-        </table>
+ <div class="container">
+  <div class="row">
+    @Each
+    <div class="col-xl-3 col-md-6 mb-4 center">
+    <a href="/categories/cat-@Current.Id">
+      <div class="card border-0 shadow">
+      
+        <img class="rounded" src="@Path['~/Content/category-[@Current.Id].jpg']" class="card-img-top" alt="...">
+        <div class="card-body text-center">
+          <h5 class="card-title mb-0">@Current.Name</h5>
+            <div class="card-text text-black-50">@Current.Description</div>
         </div>
+        
+      </div>
+      </a>
+     </div>
+      @EndEach
     </div>
-    </div>
+    </di> 
+
+    
 @EndSection
